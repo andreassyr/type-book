@@ -27,7 +27,7 @@ export const actionCreator = <T>(type: string): IActionCreator<T> =>
 export const actionCreatorVoid = (type: string): IActionCreatorVoid =>
   Object.assign((): any => ({ type }), {
     type,
-    test(action: IAction): action is IAction {
+    test(action: IAction): action is IActionWithPayload<void> {
       return action.type === type;
     }
   });

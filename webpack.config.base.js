@@ -3,6 +3,8 @@
  */
 
 const path = require('path');
+const webpack = require('webpack');
+
 const {
   dependencies: externals
 } = require('./app/package.json');
@@ -32,11 +34,17 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx', '.json'],
     modules: [
       path.join(__dirname, 'app'),
+      path.join(__dirname, 'vendor'),      
       'node_modules',
     ]
   },
 
-  plugins: [],
+  plugins: [
+    new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+  ],
 
   externals: Object.keys(externals || {})
 };

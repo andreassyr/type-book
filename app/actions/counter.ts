@@ -18,7 +18,7 @@ export function incrementIfOdd() {
 export function incrementAsync(delay: number = 1000) {
   return (dispatch: Function) => {
     setTimeout(() => {
-      dispatch(increment());
+      dispatch(increment())
     }, delay);
   };
 }
