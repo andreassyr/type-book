@@ -1,9 +1,9 @@
 /**
  * Base webpack config used across other specific configs
  */
-
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const {
   dependencies: externals
@@ -34,16 +34,20 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx', '.json'],
     modules: [
       path.join(__dirname, 'app'),
-      path.join(__dirname, 'vendor'),      
+      path.join(__dirname, 'vendor'),
       'node_modules',
     ]
   },
 
   plugins: [
     new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        })
+      $: "jquery",
+      jQuery: "jquery"
+    }),
+    new CopyWebpackPlugin([{
+      from:'./resources/book.json',
+      to:'./app/dist/resources/book.json'
+    }])
   ],
 
   externals: Object.keys(externals || {})

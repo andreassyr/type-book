@@ -5,14 +5,24 @@ import Page from '../components/Page';
 import 'turn.js/turn.js';
 import './book.global.scss';
 
+var fs = require('fs');
+const remote = require('electron').remote;
+const filePath = process.env.NODE_ENV === 'production' ? remote.app.getAppPath() : './resources/book.json';
+
 export class Book extends React.Component<RouteComponentProps<any>, void> {
   render() {
     var pages:Array<JSX.Element>=[];
+
+    fs.readFile(filePath,'utf-8',function(err:any,data:any){
+        if (err) return console.log(err);
+        console.log(data);
+    });
+
     for(let i=0;i<20;i++)
-      pages.push(<Page key={i} text={'Page '+ i}/>);
+      pages.push(<Page key={i} text={'Page '+ i} pageNumber={i}/>);
 
     return (
-      <div ref="book">
+      <div id="book" ref="book">
         {pages}
       </div>
     );

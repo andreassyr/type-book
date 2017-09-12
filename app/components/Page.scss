@@ -1,17 +1,28 @@
 :local {
-  .page.odd {
-    background-image:-webkit-linear-gradient(left, #FFF 95%, #ddd 100%);
-  	background-image:-moz-linear-gradient(left, #FFF 95%, #ddd 100%);
-  	background-image:-o-linear-gradient(left, #FFF 95%, #ddd 100%);
-  	background-image:-ms-linear-gradient(left, #FFF 95%, #ddd 100%);
-  }
+  .page {
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+    height: 100%;
+    padding: 10%;
 
-  .page.even
-  {
-    background-image:-webkit-linear-gradient(right, #FFF 95%, #ddd 100%);
-	  background-image:-moz-linear-gradient(right, #FFF 95%, #ddd 100%);
-	  background-image:-o-linear-gradient(right, #FFF 95%, #ddd 100%);
-	  background-image:-ms-linear-gradient(right, #FFF 95%, #ddd 100%);
+    h1,h2,h3,h4,h5,h6{
+        text-align: center;
+    }
+
+    &.odd {
+      background-image: -webkit-linear-gradient(left, #FFF 95%, #ddd 100%);
+      background-image: -moz-linear-gradient(left, #FFF 95%, #ddd 100%);
+      background-image: -o-linear-gradient(left, #FFF 95%, #ddd 100%);
+      background-image: -ms-linear-gradient(left, #FFF 95%, #ddd 100%);
+    }
+
+    &.even {
+      background-image: -webkit-linear-gradient(right, #FFF 95%, #ddd 100%);
+      background-image: -moz-linear-gradient(right, #FFF 95%, #ddd 100%);
+      background-image: -o-linear-gradient(right, #FFF 95%, #ddd 100%);
+      background-image: -ms-linear-gradient(right, #FFF 95%, #ddd 100%);
+    }
   }
 
   .container a {

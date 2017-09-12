@@ -1,0 +1,15 @@
+{
+  "pages": [{
+      "header": "some head",
+      "content": "the content of page 1",
+      "properties": [{
+        "name": "cover",
+        "value": true
+      }]
+    },
+    {
+      "header": "",
+      "content": "the content of page 2"
+    }
+  ]
+}
