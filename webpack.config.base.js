@@ -43,11 +43,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    }),
-    new CopyWebpackPlugin([{
-      from:'./resources/book.json',
-      to:'./app/dist/resources/book.json'
-    }])
+    })
   ],
 
   externals: Object.keys(externals || {})

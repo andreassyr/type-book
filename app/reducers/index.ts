@@ -8,7 +8,8 @@ const rootReducer = combineReducers({
 });
 
 export interface IState {
-  counter: TCounterState;
+  counter: TCounterState,
+  pages:Array<any>
 }
 
 export default rootReducer;
